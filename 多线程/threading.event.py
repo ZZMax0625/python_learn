@@ -23,6 +23,7 @@ def find_log():
         i += 1
 
 
+
 if __name__ == '__main__':
     event = threading.Event()
     threading.Thread(target=find_log).start()

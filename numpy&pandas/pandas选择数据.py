@@ -2,6 +2,14 @@
 import pandas as pd
 import numpy as np
 
+
+# DataFrame 的构造主要依赖如下三个参数：
+#
+# data：表格数据；
+# index：行索引；
+# columns：列名；
+# index 对行进行索引，columns 对列进行索引
+
 dates = pd.date_range('20230101', periods=6)
 df = pd.DataFrame(np.arange(24).reshape((6, 4)), index=dates, columns=['A', 'B', 'C', 'D'])
 print(df)

@@ -32,3 +32,9 @@ print(res2)
 # df7 = pd.DataFrame(np.ones((3, 4)) * 1, columns=['b', 'c', 'd', 'e'], index=[2, 3, 4])
 # res = pd.concat([df6,df7],axis=1,join_axes=[df6.index])
 # print(res)
+
+# append 也可以添加一条序列
+df8 = pd.DataFrame(np.ones((3, 4)) * 0, columns=['a', 'b', 'c', 'd'])
+s1 = pd.Series([1,2,3,4],index=['a','b','c','d'])
+res = df8.append(s1,ignore_index=True)
+print(res)

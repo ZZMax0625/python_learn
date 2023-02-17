@@ -1,17 +1,18 @@
-#-*-coding:utf-8-*-
+# -*-coding:utf-8-*-
 
 from apscheduler.schedulers.background import BackgroundScheduler
 
 import time
 
+
 # 非阻塞任务中，任务时长超出间隔时长的情况
 def job():
-
     print('job 3s')
 
     time.sleep(5)
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
 
     sched = BackgroundScheduler(timezone='MST')
 
@@ -19,8 +20,7 @@ if __name__=='__main__':
 
     sched.start()
 
-    while(True):
-
+    while (True):
         print('main 1s')
 
         time.sleep(1)

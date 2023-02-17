@@ -1,22 +1,49 @@
 # -*-coding:utf-8-*-
-from enum import Enum
 
-import numpy as np
+from functools import lru_cache
+import time
+import math
+import datetime
 
 
-# print("hello world")
+@lru_cache(maxsize=None)
+def fibonacci(n):
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+def is_prime(n):
+    if n == 3:
+        return True
+    if n == 1 or n == 2:
+        return False
+    for i in range(2, int(math.sqrt(n) + 1)):
+        print(i)
+        if n % i == 0:
+            return False
+    return True
+
+print(int(math.sqrt(fibonacci(94))))
+
+# prime_list = []
+# for item in range(94, 95):
+#     print(item)
+#     fibonacci_value = fibonacci(item)
+#     print(fibonacci_value)
+#     if is_prime(fibonacci_value):
+#         prime_list.append(
+#             {
+#                 "fibonacci_index": item,
+#                 "fibonacci_value": fibonacci_value
+#             }
+#         )
 #
-# print("test")
+# print(prime_list)
+
+
+# start_time = time.time()
+# print(fibonacci(40))
+# end_time = time.time()
 #
-# print(0xe == 14)
-
-class Areas(Enum):
-    PE = 0x81
-    PA = 0x82
-    MK = 0x83
-    DB = 0x84
-    CT = 0x1C
-    TM = 0x1D
-
-
-print(0x84 in Areas)
+# print("耗时：" + str(end_time - start_time))
